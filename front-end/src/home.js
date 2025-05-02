@@ -1,23 +1,25 @@
 import React from 'react';
 import './App.css';
 
+
 // Importing all images
 import heroBg from './assets/header-bg.jpg';
-import parisImage from './assets/paris.jpg'; // Adjust path as needed
+import parisImage from './assets/paris.jpg';
 import tokyoImage from './assets/tokyo.jpg';
 import nycImage from './assets/nyc.jpg';
 import client1 from './assets/client-1.jpg';
 import client2 from './assets/client-2.jpg';
 import client3 from './assets/client-3.jpg';
 
+// Import the FeaturesCarousel if it's a separate component
+import DestinationsCarousel from './DestinationsCarousel';
 
 function Home() {
   return (
-    
     <div className="travel-app">
       {/* Navigation */}
       <nav className="travel-nav">
-        <div className="travel-nav__logo" >TravelEase</div>
+        <div className="travel-nav__logo">TravelEase</div>
         <ul className="travel-nav__links">
           <li><a href="#" className="active">Home</a></li>
           <li><a href="#">Location</a></li>
@@ -32,14 +34,12 @@ function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section   className="travel-hero"
-  style={{
-    background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroBg})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center'
-  }}
->
-  
+      <section className="travel-hero"
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}>
         <div className="travel-hero__content">
           <h1>Find Your Perfect Getaway</h1>
           <p>Compare deals from 500+ airlines and 1M+ hotels worldwide</p>
@@ -94,9 +94,7 @@ function Home() {
               </div>
             </div>
 
-            <button className="search-btn">
-              🔍 Search
-            </button>
+            <button className="search-btn">🔍 Search</button>
           </div>
 
           <div className="travel-search__options">
@@ -144,7 +142,8 @@ function Home() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
-            ></div>            <div className="deal-content">
+            ></div>
+            <div className="deal-content">
               <h3>Tokyo, Japan</h3>
               <p className="deal-price">$799 <span>round trip</span></p>
               <p className="deal-dates">Sep 5 - Sep 20</p>
@@ -161,7 +160,7 @@ function Home() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
-            ></div>  
+            ></div>
             <div className="deal-content">
               <h3>New York, USA</h3>
               <p className="deal-price">$449 <span>round trip</span></p>
@@ -173,31 +172,7 @@ function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="travel-features">
-        <h2>Why Book With TravelEase?</h2>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">💸</div>
-            <h3>Price Match Guarantee</h3>
-            <p>Found a better deal? We'll match it plus give you 10% credit.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">🔒</div>
-            <h3>Free Cancellation</h3>
-            <p>Most hotels allow free cancellation up to 24 hours before.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">⭐</div>
-            <h3>Rewards Program</h3>
-            <p>Earn points on every booking that you can redeem for discounts.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">📱</div>
-            <h3>Mobile App</h3>
-            <p>Manage your trips on the go with our award-winning app.</p>
-          </div>
-        </div>
-      </section>
+      <DestinationsCarousel />  {/* Corrected this line to properly use FeaturesCarousel */}
 
       {/* Newsletter */}
       <section className="travel-newsletter">

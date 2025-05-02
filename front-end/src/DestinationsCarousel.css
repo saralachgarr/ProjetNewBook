@@ -1,0 +1,259 @@
+.destinations-carousel {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.5rem;
+    color: #001219;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+  }
+  
+  .carousel-wrapper {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+  
+  .carousel-container {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s ease;
+    margin: 0 auto;
+    transform: translateX(calc(var(--current-index) * -100% / var(--visible-cards)));
+    width: calc(100% / var(--visible-cards) * 3);
+  }
+  
+  .destination-card {
+    min-width: calc(100% / var(--visible-cards) - 1rem);
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    opacity: 0;
+    transform: scale(0.9);
+    position: relative;
+  }
+  
+  .destination-card.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .card-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: 600;
+    color: #001219;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+    text-align: left;
+  }
+  
+  .card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #001219;
+  }
+  
+  .card-content p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+  }
+  
+  .marker-icon {
+    color: #0a9396;
+  }
+  
+  .price {
+    font-weight: 700;
+    color: #0a9396;
+    font-size: 1.2rem;
+  }
+  
+  .explore-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(to right, #0a9396, #ee9b00);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .explore-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(10, 147, 150, 0.3);
+  }
+  
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #0a9396;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carousel-button:hover {
+    background-color: #0a9396;
+    color: white;
+  }
+  
+  .carousel-button svg {
+    font-size: 1.2rem;
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+  }
+  
+  .dot.active {
+    background-color: #0a9396;
+    transform: scale(1.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .carousel-container {
+      width: calc(100% / var(--visible-cards) * 2);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .destinations-carousel {
+      padding: 3rem 1rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2rem;
+    }
+    
+    .carousel-wrapper {
+      padding: 0 30px;
+    }
+    
+    .carousel-container {
+      width: calc(100% / var(--visible-cards) * 1);
+    }
+    
+    .destination-card {
+      min-width: calc(100% / var(--visible-cards) - 0.5rem);
+    }
+    
+    .card-image {
+      height: 180px;
+    }
+    
+    .card-content {
+      padding: 1.2rem;
+    }
+    
+    .carousel-button {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-header h2 {
+      font-size: 1.8rem;
+    }
+    
+    .section-header p {
+      font-size: 1rem;
+    }
+    
+    .carousel-wrapper {
+      padding: 0 20px;
+    }
+    
+    .card-content h3 {
+      font-size: 1.3rem;
+    }
+    
+    .card-content p {
+      font-size: 0.9rem;
+    }
+  }
