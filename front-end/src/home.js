@@ -1,202 +1,263 @@
 import React from 'react';
 import './App.css';
-function Home(){
-    return (
-        <div>
-            <nav>
-      <div class="nav__logo">NewBook</div>
-      <ul class="nav__links">
-        <li class="link"><a href="#">Home</a></li>
-        <li class="link"><a href="#">Book</a></li>
-        <li class="link"><a href="#">Blog</a></li>
-        <li class="link"><a href="#">Contact Us</a></li>
-      </ul>
-    </nav>
-    <header class="section__container header__container">
-      <div class="header__image__container">
-        <div class="header__content">
-          <h1>Enjoy Your Dream Vacation</h1>
-          <p>Book Hotels, Flights and stay packages at lowest price.</p>
-        </div>
-        <div class="booking__container">
-          <form>
-            <div class="form__group">
-              <div class="input__group">
-                <input type="text" />
-                <label>Location</label>
-              </div>
-              <p>Where are you going?</p>
-            </div>
-            <div class="form__group">
-              <div class="input__group">
-                <input type="text" />
-                <label>Check In</label>
-              </div>
-              <p>Add date</p>
-            </div>
-            <div class="form__group">
-              <div class="input__group">
-                <input type="text" />
-                <label>Check Out</label>
-              </div>
-              <p>Add date</p>
-            </div>
-            <div class="form__group">
-              <div class="input__group">
-                <input type="text" />
-                <label>Guests</label>
-              </div>
-              <p>Add guests</p>
-            </div>
-          </form>
-          <button class="btn"><i class="ri-search-line"></i></button>
-        </div>
-      </div>
-    </header>
 
-    <section class="section__container popular__container">
-      <h2 class="section__header">Popular Hotels</h2>
-      <div class="popular__grid">
-        <div class="popular__card">
-          <img src="assets/hotel-1.jpg" alt="popular hotel" />
-          <div class="popular__content">
-            <div class="popular__card__header">
-              <h4>The Plaza Hotel</h4>
-              <h4>$499</h4>
-            </div>
-            <p>New York City, USA</p>
-          </div>
-        </div>
-        <div class="popular__card">
-          <img src="assets/hotel-2.jpg" alt="popular hotel" />
-          <div class="popular__content">
-            <div class="popular__card__header">
-              <h4>Ritz Paris</h4>
-              <h4>$549</h4>
-            </div>
-            <p>Paris, France</p>
-          </div>
-        </div>
-        <div class="popular__card">
-          <img src="assets/hotel-3.jpg" alt="popular hotel" />
-          <div class="popular__content">
-            <div class="popular__card__header">
-              <h4>The Peninsula</h4>
-              <h4>$599</h4>
-            </div>
-            <p>Hong Kong</p>
-          </div>
-        </div>
-        <div class="popular__card">
-          <img src="assets/hotel-4.jpg" alt="popular hotel" />
-          <div class="popular__content">
-            <div class="popular__card__header">
-              <h4>Atlantis The Palm</h4>
-              <h4>$449</h4>
-            </div>
-            <p>Dubai, United Arab Emirates</p>
-          </div>
-        </div>
-        <div class="popular__card">
-          <img src="assets/hotel-5.jpg" alt="popular hotel" />
-          <div class="popular__content">
-            <div class="popular__card__header">
-              <h4>The Ritz-Carlton</h4>
-              <h4>$649</h4>
-            </div>
-            <p>Tokyo, Japan</p>
-          </div>
-        </div>
-        <div class="popular__card">
-          <img src="assets/hotel-6.jpg" alt="popular hotel" />
-          <div class="popular__content">
-            <div class="popular__card__header">
-              <h4>Marina Bay Sands</h4>
-              <h4>$549</h4>
-            </div>
-            <p>Singapore</p>
-          </div>
-        </div>
-      </div>
-    </section>
+// Importing all images
+import heroBg from './assets/header-bg.jpg';
+import parisImage from './assets/paris.jpg'; // Adjust path as needed
+import tokyoImage from './assets/tokyo.jpg';
+import nycImage from './assets/nyc.jpg';
+import client1 from './assets/client-1.jpg';
+import client2 from './assets/client-2.jpg';
+import client3 from './assets/client-3.jpg';
 
-    <section class="client">
-      <div class="section__container client__container">
-        <h2 class="section__header">What our client say</h2>
-        <div class="client__grid">
-          <div class="client__card">
-            <img src="assets/client-1.jpg" alt="client" />
-            <p>
-              The booking process was seamless, and the confirmation was
-              instant. I highly recommend WDM&Co for hassle-free hotel bookings.
-            </p>
-          </div>
-          <div class="client__card">
-            <img src="assets/client-2.jpg" alt="client" />
-            <p>
-              The website provided detailed information about hotel, including
-              amenities, photos, which helped me make an informed decision.
-            </p>
-          </div>
-          <div class="client__card">
-            <img src="assets/client-3.jpg" alt="client" />
-            <p>
-              I was able to book a room within minutes, and the hotel exceeded
-              my expectations. I appreciate WDM&Co's efficiency and reliability.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section__container">
-      <div class="reward__container">
-        <p>100+ discount codes</p>
-        <h4>Join rewards and discover amazing discounts on your booking</h4>
-        <button class="reward__btn">Join Rewards</button>
-      </div>
-    </section>
+function Home() {
+  return (
+    
+    <div className="travel-app">
+      {/* Navigation */}
+      <nav className="travel-nav">
+        <div className="travel-nav__logo" >TravelEase</div>
+        <ul className="travel-nav__links">
+          <li><a href="#" className="active">Home</a></li>
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Car Rentals</a></li>
+          <li><a href="#">Hotels</a></li>
+          <li><a href="#">Vols</a></li>
+        </ul>
+        <div className="travel-nav__auth">
+          <button className="btn-secondary">Sign In</button>
+          <button className="btn-primary">Sign Up</button>
+        </div>
+      </nav>
 
-    <footer class="footer">
-      <div class="section__container footer__container">
-        <div class="footer__col">
-          <h3>WDM&Co</h3>
-          <p>
-            WDM&Co is a premier hotel booking website that offers a seamless and
-            convenient way to find and book accommodations worldwide.
-          </p>
-          <p>
-            With a user-friendly interface and a vast selection of hotels,
-            WDM&Co aims to provide a stress-free experience for travelers
-            seeking the perfect stay.
-          </p>
+      {/* Hero Section */}
+      <section   className="travel-hero"
+  style={{
+    background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroBg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}
+>
+  
+        <div className="travel-hero__content">
+          <h1>Find Your Perfect Getaway</h1>
+          <p>Compare deals from 500+ airlines and 1M+ hotels worldwide</p>
         </div>
-        <div class="footer__col">
-          <h4>Company</h4>
-          <p>About Us</p>
-          <p>Our Team</p>
-          <p>Blog</p>
-          <p>Book</p>
-          <p>Contact Us</p>
+
+        {/* Search Widget */}
+        <div className="travel-search">
+          <div className="travel-search__tabs">
+            <button className="active">Round Trip</button>
+            <button>One Way</button>
+            <button>Multi-City</button>
+          </div>
+
+          <div className="travel-search__form">
+            <div className="form-group">
+              <label>From</label>
+              <div className="input-with-icon">
+                <span className="icon">✈️</span>
+                <input type="text" placeholder="City or Airport" value="Casablanca (CMN)" />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label>To</label>
+              <div className="input-with-icon">
+                <span className="icon">✈️</span>
+                <input type="text" placeholder="Where to?" />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label>Departure</label>
+              <div className="input-with-icon">
+                <span className="icon">📅</span>
+                <input type="date" placeholder="Select date" />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label>Return</label>
+              <div className="input-with-icon">
+                <span className="icon">📅</span>
+                <input type="date" placeholder="Select date" />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label>Travelers</label>
+              <div className="input-with-icon">
+                <span className="icon">👥</span>
+                <input type="text" placeholder="1 adult, Economy" />
+              </div>
+            </div>
+
+            <button className="search-btn">
+              🔍 Search
+            </button>
+          </div>
+
+          <div className="travel-search__options">
+            <label>
+              <input type="checkbox" /> Add nearby airports
+            </label>
+            <label>
+              <input type="checkbox" /> Direct flights only
+            </label>
+            <label>
+              <input type="checkbox" /> Flexible dates
+            </label>
+          </div>
         </div>
-        <div class="footer__col">
-          <h4>Legal</h4>
-          <p>FAQs</p>
-          <p>Terms & Conditions</p>
-          <p>Privacy Policy</p>
+      </section>
+
+      {/* Deals Section */}
+      <section className="travel-deals">
+        <h2>Today's Best Deals</h2>
+        <div className="deals-grid">
+          <div className="deal-card">
+            <div className="deal-badge">HOT DEAL</div>
+            <div
+              className="deal-image"
+              style={{
+                backgroundImage: `url(${parisImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            ></div>
+            <div className="deal-content">
+              <h3>Paris, France</h3>
+              <p className="deal-price">$299 <span>round trip</span></p>
+              <p className="deal-dates">Jun 15 - Jun 22</p>
+              <p className="deal-airline">Air France • 1 stop</p>
+            </div>
+          </div>
+
+          <div className="deal-card">
+            <div className="deal-badge">SAVE 35%</div>
+            <div
+              className="deal-image"
+              style={{
+                backgroundImage: `url(${tokyoImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            ></div>            <div className="deal-content">
+              <h3>Tokyo, Japan</h3>
+              <p className="deal-price">$799 <span>round trip</span></p>
+              <p className="deal-dates">Sep 5 - Sep 20</p>
+              <p className="deal-airline">Japan Airlines • Nonstop</p>
+            </div>
+          </div>
+
+          <div className="deal-card">
+            <div className="deal-badge">LAST MINUTE</div>
+            <div
+              className="deal-image"
+              style={{
+                backgroundImage: `url(${nycImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            ></div>  
+            <div className="deal-content">
+              <h3>New York, USA</h3>
+              <p className="deal-price">$449 <span>round trip</span></p>
+              <p className="deal-dates">May 10 - May 17</p>
+              <p className="deal-airline">Delta • 1 stop</p>
+            </div>
+          </div>
         </div>
-        <div class="footer__col">
-          <h4>Resources</h4>
-          <p>Social Media</p>
-          <p>Help Center</p>
-          <p>Partnerships</p>
+      </section>
+
+      {/* Features Section */}
+      <section className="travel-features">
+        <h2>Why Book With TravelEase?</h2>
+        <div className="features-grid">
+          <div className="feature-card">
+            <div className="feature-icon">💸</div>
+            <h3>Price Match Guarantee</h3>
+            <p>Found a better deal? We'll match it plus give you 10% credit.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">🔒</div>
+            <h3>Free Cancellation</h3>
+            <p>Most hotels allow free cancellation up to 24 hours before.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">⭐</div>
+            <h3>Rewards Program</h3>
+            <p>Earn points on every booking that you can redeem for discounts.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">📱</div>
+            <h3>Mobile App</h3>
+            <p>Manage your trips on the go with our award-winning app.</p>
+          </div>
         </div>
-      </div>
-      <div class="footer__bar">
-        Copyright © 2023 Web Design Mastery. All rights reserved.
-      </div>
-    </footer>
+      </section>
+
+      {/* Newsletter */}
+      <section className="travel-newsletter">
+        <div className="newsletter-content">
+          <h2>Get Exclusive Deals</h2>
+          <p>Subscribe to our newsletter and be the first to know about special offers</p>
+          <div className="newsletter-form">
+            <input type="email" placeholder="Your email address" />
+            <button className="btn-primary">Subscribe</button>
+          </div>
         </div>
-    )
+      </section>
+
+      {/* Footer */}
+      <footer className="travel-footer">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h3>TravelEase</h3>
+            <p>Making travel planning easy and affordable since 2023.</p>
+            <div className="social-icons">
+              <a href="#">📱</a>
+              <a href="#">📘</a>
+              <a href="#">📸</a>
+              <a href="#">🐦</a>
+            </div>
+          </div>
+          <div className="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            <h4>Destinations</h4>
+            <ul>
+              <li><a href="#">Europe</a></li>
+              <li><a href="#">Asia</a></li>
+              <li><a href="#">North America</a></li>
+              <li><a href="#">Africa</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>© 2023 TravelEase. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
 }
+
 export default Home;
