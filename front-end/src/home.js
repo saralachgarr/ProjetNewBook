@@ -1,17 +1,13 @@
 import React from 'react';
 import './App.css';
 
-
-// Importing all images
+// Import images
 import heroBg from './assets/header-bg.jpg';
 import parisImage from './assets/paris.jpg';
 import tokyoImage from './assets/tokyo.jpg';
 import nycImage from './assets/nyc.jpg';
-import client1 from './assets/client-1.jpg';
-import client2 from './assets/client-2.jpg';
-import client3 from './assets/client-3.jpg';
 
-// Import the FeaturesCarousel if it's a separate component
+// Import carousel component
 import DestinationsCarousel from './DestinationsCarousel';
 
 function Home() {
@@ -34,12 +30,14 @@ function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="travel-hero"
+      <section
+        className="travel-hero"
         style={{
-          background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroBg})`,
+          background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${heroBg})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}>
+          backgroundPosition: 'center',
+        }}
+      >
         <div className="travel-hero__content">
           <h1>Find Your Perfect Getaway</h1>
           <p>Compare deals from 500+ airlines and 1M+ hotels worldwide</p>
@@ -55,58 +53,52 @@ function Home() {
 
           <div className="travel-search__form">
             <div className="form-group">
-              <label>From</label>
+              <label htmlFor="from">From</label>
               <div className="input-with-icon">
-                <span className="icon">✈️</span>
-                <input type="text" placeholder="City or Airport" value="Casablanca (CMN)" />
+                <span className="icon" aria-label="flight">✈️</span>
+                <input type="text" id="from" placeholder="City or Airport" defaultValue="Casablanca (CMN)" />
               </div>
             </div>
 
             <div className="form-group">
-              <label>To</label>
+              <label htmlFor="to">To</label>
               <div className="input-with-icon">
-                <span className="icon">✈️</span>
-                <input type="text" placeholder="Where to?" />
+                <span className="icon" aria-label="flight">✈️</span>
+                <input type="text" id="to" placeholder="Where to?" />
               </div>
             </div>
 
             <div className="form-group">
-              <label>Departure</label>
+              <label htmlFor="departure">Departure</label>
               <div className="input-with-icon">
-                <span className="icon">📅</span>
-                <input type="date" placeholder="Select date" />
+                <span className="icon" aria-label="calendar">📅</span>
+                <input type="date" id="departure" />
               </div>
             </div>
 
             <div className="form-group">
-              <label>Return</label>
+              <label htmlFor="return">Return</label>
               <div className="input-with-icon">
-                <span className="icon">📅</span>
-                <input type="date" placeholder="Select date" />
+                <span className="icon" aria-label="calendar">📅</span>
+                <input type="date" id="return" />
               </div>
             </div>
 
             <div className="form-group">
-              <label>Travelers</label>
+              <label htmlFor="travelers">Travelers</label>
               <div className="input-with-icon">
-                <span className="icon">👥</span>
-                <input type="text" placeholder="1 adult, Economy" />
+                <span className="icon" aria-label="people">👥</span>
+                <input type="text" id="travelers" placeholder="1 adult, Economy" />
               </div>
             </div>
 
-            <button className="search-btn">🔍 Search</button>
+            <button className="search-btn" aria-label="Search flights">🔍 Search</button>
           </div>
 
           <div className="travel-search__options">
-            <label>
-              <input type="checkbox" /> Add nearby airports
-            </label>
-            <label>
-              <input type="checkbox" /> Direct flights only
-            </label>
-            <label>
-              <input type="checkbox" /> Flexible dates
-            </label>
+            <label><input type="checkbox" /> Add nearby airports</label>
+            <label><input type="checkbox" /> Direct flights only</label>
+            <label><input type="checkbox" /> Flexible dates</label>
           </div>
         </div>
       </section>
@@ -115,6 +107,7 @@ function Home() {
       <section className="travel-deals">
         <h2>Today's Best Deals</h2>
         <div className="deals-grid">
+          {/* Paris */}
           <div className="deal-card">
             <div className="deal-badge">HOT DEAL</div>
             <div
@@ -122,9 +115,11 @@ function Home() {
               style={{
                 backgroundImage: `url(${parisImage})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundPosition: 'center',
               }}
-            ></div>
+              role="img"
+              aria-label="Paris cityscape"
+            />
             <div className="deal-content">
               <h3>Paris, France</h3>
               <p className="deal-price">$299 <span>round trip</span></p>
@@ -133,6 +128,7 @@ function Home() {
             </div>
           </div>
 
+          {/* Tokyo */}
           <div className="deal-card">
             <div className="deal-badge">SAVE 35%</div>
             <div
@@ -140,9 +136,11 @@ function Home() {
               style={{
                 backgroundImage: `url(${tokyoImage})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundPosition: 'center',
               }}
-            ></div>
+              role="img"
+              aria-label="Tokyo cityscape"
+            />
             <div className="deal-content">
               <h3>Tokyo, Japan</h3>
               <p className="deal-price">$799 <span>round trip</span></p>
@@ -151,6 +149,7 @@ function Home() {
             </div>
           </div>
 
+          {/* New York */}
           <div className="deal-card">
             <div className="deal-badge">LAST MINUTE</div>
             <div
@@ -158,9 +157,11 @@ function Home() {
               style={{
                 backgroundImage: `url(${nycImage})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundPosition: 'center',
               }}
-            ></div>
+              role="img"
+              aria-label="New York cityscape"
+            />
             <div className="deal-content">
               <h3>New York, USA</h3>
               <p className="deal-price">$449 <span>round trip</span></p>
@@ -171,8 +172,8 @@ function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <DestinationsCarousel />  {/* Corrected this line to properly use FeaturesCarousel */}
+      {/* Carousel Section */}
+      <DestinationsCarousel />
 
       {/* Newsletter */}
       <section className="travel-newsletter">
@@ -180,8 +181,8 @@ function Home() {
           <h2>Get Exclusive Deals</h2>
           <p>Subscribe to our newsletter and be the first to know about special offers</p>
           <div className="newsletter-form">
-            <input type="email" placeholder="Your email address" />
-            <button className="btn-primary">Subscribe</button>
+            <input type="email" placeholder="Your email address" aria-label="Your email address" />
+            <button className="btn-primary" aria-label="Subscribe to newsletter">Subscribe</button>
           </div>
         </div>
       </section>
